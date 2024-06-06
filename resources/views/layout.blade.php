@@ -52,8 +52,8 @@ $css_path = "frontend/css/lightbox.css";
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                   > <a href="{{ url('') }}" class="logo"
-                        <img src="{{ asset('frontend/images/logo.png') }}" height="111" width="111">
+                    <a href="{{ url('') }}" class="logo">
+                        <img src="{{ asset('frontend/images/logo.png') }}" height="111" width="111"
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
