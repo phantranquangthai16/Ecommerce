@@ -66,7 +66,9 @@ $css_path = "frontend/css/lightbox.css";
                             <a href="javascript:;">Trang</a>
                             <ul>
                                 <li><a href="about.html">Về chúng tôi</a></li>
-                                <li><a href="product.blade.php">Sản phẩm</a></li>
+                                <li><a href="{{route('san_pham')}}">Sản phẩm</a>
+                                <li><a href="{{route('danh_muc')}}">Danh mục</a></li>
+
                             </ul>
                         </li>
 {{--                        <li class="submenu">--}}

@@ -19,9 +19,12 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [IndexController::class, 'home']);
 Route::get('/danh-muc', [IndexController::class, 'danh_muc'])->name('danh_muc');// liệt kê các danh mục
 Route::get('/danh-muc/{slug}', [IndexController::class, 'danh_muc'])->name('danh_muc_con');
+Route::get('/san-pham', [IndexController::class, 'san_pham'])->name('san_pham');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //category
 route::resource('/category', CategoryController::class);
+
+Route::get('/edit-category', [CategoryController::class, 'getEditCategory']);

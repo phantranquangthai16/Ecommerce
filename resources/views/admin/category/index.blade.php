@@ -51,11 +51,12 @@
                                         </td>
                                         <td><img src="{{asset('uploads/category/'.$cate->image)}}" height="150px"width="150px"></td>
                                         <td>
-                                            <a href="{{route('category.edit',$cate->id)}}" class="btn btn-primary">Sửa</a>
+{{--                                            <a href="{{route('category.edit',$cate->id)}}" class="btn btn-primary">Sửa</a>--}}
+                                            <button class="btn btn-primary edit-category" onclick="editCategory({{$cate->id}})">Sửa</button>
                                             <form action="{{route('category.destroy',[$cate->id])}}"method = "POST">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button onclick=" return confirm('bạn có muốn xóa danh mục này không ?');"class="btn btn-danger">delete</button>
+                                                <button onclick=" return confirm('bạn có muốn xóa danh mục này không ?');" class="btn btn-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -68,3 +69,49 @@
         </div>
     </div>
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+    });
+    function editCategory(id) {
+            // Sử dụng AJAX để gửi yêu cầu GET đến một URL
+            $.ajax({
+                url: "/edit-category", // Thay thế bằng URL của API hoặc tệp PHP xử lý yêu cầu
+                data: {id: id},
+                type: "GET",
+                success: function(response){
+                    // Xử lý phản hồi từ máy chủ
+                    console.log(response);
+                    const html =`
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Sửa Category</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                ...
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    `;
+
+                    $('body').append(html);
+                    $('#exampleModalCenter').modal();
+                },
+                error: function(xhr, status, error){
+                    // Xử lý lỗi nếu có
+                }
+            });
+    }
+</script>

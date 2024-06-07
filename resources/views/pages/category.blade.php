@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Elevate Your Game, Elevate Your Style</h2>
-                        <span>Empowering Your Active Lifestyle with Trendsetting Designs</span>
+                        <h2>Chào mừng bạn đến với Thai's Store</h2>
+                        <span>Đây là trang Danh Mục</span>
 
                     </div>
                 </div>
@@ -15,7 +15,6 @@
         </div>
     </div>
     <!-- ***** Main Banner Area End ***** -->
-    <!-- ***** Main Banner Area Start ***** -->
     <div class="main-banner" id="top">
         <div class="container-fluid">
             <div class="row">
@@ -52,7 +51,6 @@
             </div>
         </div>
     </div>
-    <!----------MAIN BANNER AREA END---------->
 
 
     {{--    <!-- ***** Products Area Starts ***** -->--}}

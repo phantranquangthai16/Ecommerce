@@ -103,6 +103,19 @@ class CategoryController extends Controller
         return view('admin.category.edit',compact('category'));
     }
 
+    public function getEditCategory(Request $request)
+    {
+        $id = $request->get('id');
+        $category = Category::find($id);
+
+        if (!empty($category)){
+            return response()->json([
+                'success' => true,
+                'category' => $category
+            ]);
+        }
+    }
+
     /**
      * Update the specified resource in storage.
      *
