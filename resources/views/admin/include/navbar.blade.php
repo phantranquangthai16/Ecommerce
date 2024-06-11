@@ -13,10 +13,11 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('category.index')}}">Danh mục quần áo</a>
-
-            <li class="nav-item">
-                <a class="nav-link"  href="#">### <span class="sr-only">(current)</span></a>
             </li>
+                <li class="nav-item">
+                    <a class="nav-link"    href="{{ url('/products') }}">Danh sách sản phẩm</a>
+                </li>
+    
         </ul>
     </div>
 </nav>

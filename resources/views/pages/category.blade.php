@@ -34,7 +34,7 @@
                                                                     <h4>{{ $cate->name_inside }}</h4>
                                                                     <p>{{ $cate->description_inside }}</p>
                                                                     <div class="main-border-button">
-                                                                        <a href="{{ url('danh_muc/' . $cate->slug)}}">Khám phá ngay!</a>
+                                                                        <a href="{{ url('danh-muc/' . $cate->slug)}}">Khám phá ngay!</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

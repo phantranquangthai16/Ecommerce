@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 route::resource('/category', CategoryController::class);
 
 Route::get('/edit-category', [CategoryController::class, 'getEditCategory']);
+
+// products
+Route::get('/products', [ProductController::class, 'index'])

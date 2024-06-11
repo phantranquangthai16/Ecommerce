@@ -24,12 +24,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/lightbox.css')}}">
 
     <link rel="stylesheet" href="{{asset('frontend/css/thai.css')}}">
-    <!--
 
-
-    https://templatemo.com/tm-571-hexashop
-
-    -->
 </head>
 
 <body>
@@ -108,7 +103,7 @@ $css_path = "frontend/css/lightbox.css";
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-6">
                 <div class="first-item">
                     <div class="logo">
                         <h4>Thông tin liên hệ</h4>
@@ -120,7 +115,7 @@ $css_path = "frontend/css/lightbox.css";
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-6">
                 <h4>Shopping &amp; Categories</h4>
                 <ul>
                     <li><a href="#">Thời trang nam</a></li>
