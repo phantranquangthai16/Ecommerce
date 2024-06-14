@@ -15,7 +15,7 @@
                 <a class="nav-link" href="{{route('category.index')}}">Danh mục quần áo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('products')}}">Danh mục sản phẩm</a>
+                <a class="nav-link" href="{{url('product-lists')}}">Danh mục sản phẩm</a>
             </li>
     
         </ul>

@@ -16,6 +16,7 @@ class Product extends Model
         'brand',
         'price',
         'description',
+        'updated_at',
         'created_at',
         'image',
 

@@ -15,13 +15,16 @@ class ProductController extends Controller
     }
 
     public function create()
+
     {
         $categories = Category::all();
-        return view('admin.products.create', compact('categories'));
+        // dd($categories);
+        return view('admin.product.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
+      
         $request->validate([
             'product_name' => 'required|string|max:255',
             'product_code' => 'required|string|max:100|unique:products',
@@ -29,7 +32,7 @@ class ProductController extends Controller
             'brand' => 'nullable|string|max:100',
             'price' => 'required|numeric',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'required|max:255',
         ]);
 
         $product = new Product();
@@ -77,13 +80,15 @@ class ProductController extends Controller
         ]);
 
         $product = Product::findOrFail($id);
-        $product->product_name = $request->product_name;
-        $product->product_code = $request->product_code;
-        $product->category_id = $request->category_id;
-        $product->brand = $request->brand;
-        $product->price = $request->price;
-        $product->description = $request->description;
 
+        // $product->product_name = $request->product_name;
+        // $product->product_code = $request->product_code;
+        // $product->category_id = $request->category_id;
+        // $product->brand = $request->brand;
+        // $product->price = $request->price;
+        // $product->description = $request->description;
+
+        $imageName = '';
         if ($request->hasFile('image')) {
             // Xóa hình ảnh cũ nếu có
             if ($product->image) {
@@ -92,12 +97,21 @@ class ProductController extends Controller
 
             $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('images'), $imageName);
-            $product->image = $imageName;
+            // $product->image = $imageName;
         }
 
-        $product->save();
+        // $product->save();
+        $product->insert([
+            "product_name" => $request->product_name,
+            "product_code" => $request->product_code,
+            "category_id" => $request->category_id,
+            "brand" => $request->brand,
+            "price" => $request->price,
+            "description" => $request->description,
+            "image" => $imageName
+        ]);
 
-        return redirect()->route('products.index')->with('success', 'Product updated successfully.');
+        return redirect('/product-lists')->with('success', 'Product updated successfully.');
     }
 
     public function destroy($id)

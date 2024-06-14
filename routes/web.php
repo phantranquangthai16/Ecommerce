@@ -32,4 +32,7 @@ route::resource('/category', CategoryController::class);
 Route::get('/edit-category', [CategoryController::class, 'getEditCategory']);
 
 // products
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/product-lists', [ProductController::class, 'index']);
+Route::get('/back-to-index', [ProductController::class, 'index']);
+Route::get('/add-product', [ProductController::class, 'create']);
+Route::post('/save-product', [ProductController::class, 'store']);

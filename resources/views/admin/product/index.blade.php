@@ -16,7 +16,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                        <a href="" class="btn btn-success">thêm sản phẩm </a>
+                        <a href="{{url('add-product')}}" class="btn btn-success">thêm sản phẩm </a>
                         <table id="myTable" class="table table-striped">
                             <thead>
                                 <tr>

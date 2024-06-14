@@ -22,7 +22,7 @@
     @endif
 
     <!-- Form tạo mới sản phẩm -->
-    <form action="{{ route('products.store') }}" method="POST">
+    <form action="{{ url('/save-product') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="product_name">Product Name:</label>
@@ -58,8 +58,14 @@
             <textarea class="form-control" id="description" name="description">{{ old('description') }}</textarea>
         </div>
 
+        <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="{{ route('products.index') }}" class="btn btn-secondary">Back</a>
+        <a href="{{url('/back-to-index') }}" class="btn btn-secondary">Back</a>
+        
     </form>
 </div>
 </body>
